@@ -20,15 +20,15 @@
                     <tr>
                         <th class="wd-md text-center custom">Name</th>
                         <th class="wd-md text-center custom">Offer %</th>
+                        <th class="wd-md text-center custom">Role</th>
                        <th class="text-center">Delete</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr class="text-center" *ngFor="let coupon of coupons">
-                        <td><a href="">{{coupon.name}}</a>
-                        </td>
-                        <td><a href="">{{coupon.value}}</a>
-                        </td>                        
+                        <td>{{coupon.name}}</td>
+                        <td>{{coupon.value}}</td> 
+                        <td>{{coupon.role}}</td>                        
                         <td class="text-center">
                          <button class="btn btn-sm btn-default" type="button" (click)="couponDelete(coupon.key)">
                          <em class="fa fa-trash-o"></em>

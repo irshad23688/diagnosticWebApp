@@ -14,7 +14,8 @@ export class AddCouponsComponent {
     coupon: any = {
         name: '',
         value:'',
-        date:''
+        date:'',
+        role:''
     };
     couponDataRef: AngularFireList<any>;
 

@@ -21,6 +21,18 @@
                   <input class="form-control" type="number" placeholder="Enter Coupon Value % " name="couponValue" id="couponValue" [(ngModel)]="coupon.value"/>
                </div>
                <div class="form-group">
+                  <label>Role</label>
+                  <select class="input-sm form-control" [(ngModel)]="coupon.role" name="couponRole" id="couponRole" >
+                      <option>Select Role</option>
+                      <option value="User">User</option>
+                      <option value="Admin">Admin</option>
+                      <option value="Doctor">Doctor</option>
+                       
+                       
+                  </select>
+              </div>
+               
+               <div class="form-group">
                   <div class="col-md-10">
                     <div class="col-md-2"></div>
                        <div class="col-md-9">

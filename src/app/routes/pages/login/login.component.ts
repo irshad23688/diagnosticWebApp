@@ -23,8 +23,8 @@ export class LoginComponent implements OnInit {
     public db: AngularFireDatabase, public toastr: ToastrService) //,public toastr: ToastrService
   {
     this.valForm = fb.group({
-      'email': ['irshad23688@gmail.com', Validators.compose([Validators.required, CustomValidators.email])],
-      'password': ['irshad', Validators.required]
+      'email': ['admin@gmail.com', Validators.compose([Validators.required, CustomValidators.email])],
+      'password': ['admin123', Validators.required]
     });
 
     this.getCookie();
@@ -56,7 +56,7 @@ export class LoginComponent implements OnInit {
       this.af.auth.signInWithEmailAndPassword(value.email, value.password).then((success) => {
         this.db.object('/users/' + success.uid).valueChanges().subscribe((res: any) => {
 
-          if (res.role == "Admin") {
+          if (res.role == "Admin" || res.role == "Doctor") {
             this.router.navigate(['home']);
             localStorage.setItem('uid', success.uid)
             this.toastr.success('Login Successfully!', 'Success!');
