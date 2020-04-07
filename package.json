@@ -39,7 +39,7 @@
     "angular2-text-mask": "8.0.4",
     "angular2-toaster": "4.0.1",
     "angularfire2": "5.0.0-rc.3",
-    "bootstrap": "3.3.7",
+    "bootstrap": "<=3.3.7",
     "chart.js": "^2.9.3",
     "classlist.js": "1.1.20150312",
     "codemirror": "5.31.0",
