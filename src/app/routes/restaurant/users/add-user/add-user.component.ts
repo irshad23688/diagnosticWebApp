@@ -43,17 +43,17 @@ public fireUid:any;
    //   var config = {apiKey: "apiKey",
    // authDomain: "projectId.firebaseapp.com",
    // databaseURL: "https://databaseName.firebaseio.com"};
-var secondaryApp = firebase.initializeApp(firebaseConfigTwo,"secondary");
+//var secondaryApp = firebase.initializeApp(firebaseConfigTwo,"secondary");
 
-secondaryApp.auth().createUserWithEmailAndPassword(this.userDetails.email,this.userDetails.password).then(res=>{
+this.authentication.auth.createUserWithEmailAndPassword(this.userDetails.email,this.userDetails.password).then(res=>{
    
      this.af.object('/users/'+ res.uid).update({
        email:this.userDetails.email,
                 name:this.userDetails.name,
                 mobileNo:this.userDetails.mobileNo,
-                role:'User'
+                role:this.userDetails.role
      }).then(response=>{       
-         secondaryApp.auth().signOut();  
+        // secondaryApp.auth().signOut();  
            this.toastr.success('User Added Successfully !', 'Success!');      
          this.router.navigate(['/users/manageUsers'])
      }).catch(error=>{
