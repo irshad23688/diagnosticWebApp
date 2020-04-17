@@ -8,6 +8,7 @@ import {AngularFireAuth} from 'angularfire2/auth';
 import {ToastrService} from 'ngx-toastr';
 import {CookieService} from 'ngx-cookie';
 import { Http } from '@angular/http';
+import { InterComponentService } from '../../_service/inter-component.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -20,7 +21,7 @@ export class LoginComponent implements OnInit {
 
   constructor(private _http: Http,private _cookieService: CookieService, public af: AngularFireAuth, public settings: SettingsService, fb: FormBuilder, public router: Router, 
     
-    public db: AngularFireDatabase, public toastr: ToastrService) //,public toastr: ToastrService
+    public db: AngularFireDatabase, public toastr: ToastrService, private interComp: InterComponentService)
   {
     this.valForm = fb.group({
       'email': ['admin@gmail.com', Validators.compose([Validators.required, CustomValidators.email])],
@@ -55,8 +56,9 @@ export class LoginComponent implements OnInit {
 
       this.af.auth.signInWithEmailAndPassword(value.email, value.password).then((success) => {
         this.db.object('/users/' + success.uid).valueChanges().subscribe((res: any) => {
+          if (res.role === "Admin" || res.role === "Vendor") {
+              this.interComp.sendMessage(res.role);
 
-          if (res.role == "Admin" || res.role == "Doctor") {
             this.router.navigate(['home']);
             localStorage.setItem('uid', success.uid)
             this.toastr.success('Login Successfully!', 'Success!');

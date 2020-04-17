@@ -1,10 +1,9 @@
-import { Component, OnInit,Inject, LOCALE_ID  } from '@angular/core';
-import { ColorsService } from '../../../shared/colors/colors.service';
 import { DatePipe } from '@angular/common';
+import { Component, Inject, LOCALE_ID, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
-import {AngularFireDatabase, AngularFireList, AngularFireObject} from 'angularfire2/database';
-import {Observable} from 'rxjs/Observable';
-import {map} from 'rxjs/Operator/map';
+import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
+import { Observable } from 'rxjs/Observable';
+import { ColorsService } from '../../../shared/colors/colors.service';
 
 
 

@@ -1,114 +1,83 @@
+import { InterComponentService } from "./_service/inter-component.service";
+import { RouteConfigLoadEnd } from "@angular/router";
 
-const Home = {
-    text: 'Home',
-    link: '/home',
-    icon: 'icon-home'
-};
+const Home =  {
+    text:'Home', 
+    link:'/home', 
+    icon:'icon-home',
+    role: 'Both'
+}; 
 
-const Labs = {
-    text: 'Labs',
-    link: '/labs/manageLabs',
-    icon: 'fa fa-th-list'
+const Labs =  {
+    text:'Labs', 
+    link:'/labs/manageLabs', 
+    icon:'fa fa-th-list',
+    role:'Admin'
+}; 
 
-};
+const Bookings =  {
+    text:'Bookings', 
+    link:'/bookings', 
+    icon:'fa fa-th-list',
+    role:'Both'
+}; 
+const DailyReport =  {
+    text:'Daily Report', 
+    link:'/dailyReport', 
+    icon:'fa fa-th-list',
+    role:'Both'
+}; 
 
-const Bookings = {
-    text: 'Bookings',
-    link: '/bookings/manageBookings',
-    icon: 'fa fa-th-list'
+const Users =  {
+    text:'Users', 
+    link:'/users/manageUsers', 
+    icon:'fa fa-users',
+    role:'Admin'
+}; 
 
-};
+const Setting =  {
+    text:'Setting', 
+    link:'/setting', 
+    icon:'fa fa-cog',
+    role:'Admin'
+}; 
 
-const Categories = {
-    text: 'Categories',
-    link: '/categories/manageCategories',
-    icon: 'icon-note'
+const Business =  {
+    text:'Business Info', 
+    link:'/businessInfo', 
+    icon:'fa fa-briefcase'
+}; 
+const Coupons =  {
+    text:'Coupons', 
+    link:'/coupons/all', 
+    icon:'fa fa-minus-square',
+    role:'Admin'
+}; 
 
-};
-const Menu = {
-    text: 'Menu Items',
-    link: '/menu/manageItems',
-    icon: 'fa fa-th-list'
-};
+const pushNotification =  {
+    text:'Push Notification', 
+    link:'/pushNotification', 
+    icon:'fa fa-briefcase',
+    role:'Admin'
+}; 
+const Subscribers =  {
+    text:'Subscribers', 
+    link:'/subscribers', 
+    icon:'fa fa-rss'
+}; 
+const Tables =  {
+    text:'Table Booking', 
+    link:'/tables/booking', 
+    icon:'fa fa-calendar'
+}; 
 
-const Orders = {
-    text : 'Orders',
-    link:'/order/allOrder',
-    icon: 'fa fa-bars'
-};
-
-const Users = {
-    text: 'Users',
-    link: '/users/manageUsers',
-    icon: 'fa fa-users'
-};
-
-const Loyalitys = {
-    text: 'Loyalty',
-    link: '/loyalty',
-    icon: 'fa fa-tags'
-};
-
-const Chat = {
-    text: 'Chat',
-    link:'/chat',
-    icon: 'fa fa-comments-o'
-};
-
-const Setting = {
-    text: 'Setting',
-    link:'/setting',
-    icon: 'fa fa-cog'
-};
-
-const Tags = {
-    text: 'Tags',
-    link: '/tags/all',
-    icon: 'fa fa-tags'
-};
-
-const News = {
-    text: 'News',
-    link: '/news/manageNews',
-    icon: 'fa fa-newspaper-o'
-};
-const Business = {
-    text: 'Business Info',
-    link: '/businessInfo',
-    icon: 'fa fa-briefcase'
-};
-const Coupons = {
-    text: 'Coupons',
-    link: '/coupons/all',
-    icon: 'fa fa-minus-square'
-};
-
-const pushNotification = {
-    text: 'Push Notification',
-    link: '/pushNotification',
-    icon: 'fa fa-briefcase'
-};
-const Testimonials = {
-    text: 'Testimonials',
-    link: '/testimonials/manageTestimonials',
-    icon: 'fa fa-users'
-};
-const Subscribers = {
-    text: 'Subscribers',
-    link: '/subscribers',
-    icon: 'fa fa-rss'
-};
-const Tables = {
-    text: 'Table Booking',
-    link: '/tables/booking',
-    icon: 'fa fa-calendar'
-};
-
-const deliveryOptions = {
-    text: 'Delivery Options',
-    link: '/delivery/options',
-    icon: 'fa fa-map-marker'
-};
+const LabUsers =  {
+    text:'Lab Users', 
+    link:'/labusers/manageLabUsers', 
+    icon:'fa fa-th-list',
+    role:'Admin'
+ 
+ }; 
 // const Pages = {  
 //     text: 'Pages',
 //     link: '/pages',
@@ -162,42 +131,22 @@ const deliveryOptions = {
 // }
 
 
+        export const menu = [
+                Home, 
+                Labs, 
+                LabUsers, 
+                Bookings,
+                DailyReport,
+                Coupons, 
+                Users, 
+                pushNotification, 
+                Setting, 
+                // Subscribers
+                //Pages
+            ]; 
+        
+    
+    
 
 
-const headingMain = {
-    text: 'Navigation',
-    heading: true
-};
 
-const headingComponents = {
-    text: 'Components',
-    heading: true
-};
-
-const headingMore = {
-    text: 'More',
-    heading: true
-};
-
-export const menu = [
-    Home,
-    Categories,
-    Menu,
-    Labs,
-    Bookings,
-    Orders,
-    Tables,    
-    Coupons,
-    Tags,
-    Users,
-    pushNotification,
-    News,
-    deliveryOptions,
-    Loyalitys,
-    Business,
-    Setting,
-    Chat,
-    Testimonials,
-    Subscribers
-    //Pages
-];

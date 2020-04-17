@@ -17,6 +17,9 @@
                         <strong>Name</strong>
                     </th>
                     <th class="text-center">
+                        <strong>Lab Name</strong>
+                    </th>
+                    <th class="text-center">
                         <strong>Appointment Date</strong>
                     </th>
                     <th class="text-center">
@@ -25,7 +28,7 @@
                     <th class="text-center">
                         <strong>Status</strong>
                     </th>
-                    <th class="text-center">
+                    <th class="text-center" *ngIf="roleKey!=='Admin'">
                         <strong>Status Action</strong>
                     </th>
                     <th class="text-center">
@@ -37,29 +40,30 @@
                     <th class="text-center">
                         <strong>Total</strong>
                     </th>
-                    <th class="text-center">
+                    <th class="text-center" *ngIf="roleKey!=='Admin'">
                         <strong>ACTION</strong>
                     </th>
-                    <th class="text-center">
+                    <!-- <th class="text-center">
                         <strong>View</strong>
-                    </th>
+                    </th> -->
                 </tr>
             </thead>
             <tbody>
                 <tr class="text-center" *ngFor="let item of bookings;let i = index ">
                     <td>{{i+1}}</td>
-                    <td>{{item.bookingId}}
-                    <td>{{item.name}}
+                    <td>{{item.bookingId}}</td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.labName}}</td>
                     <td>{{item.appointDate}}</td>
-                    <td>{{item.number}}</td>
+                    <td>{{item.mobileNumber}}</td>
                     <td class="text-center">
                         <span class="label label-success" *ngIf="item.status=='Completed'">{{item.status}}
                         </span>
                         <span class="label label-warning" *ngIf="item.status =='Booked'">{{item.status}}</span>
                         <span class="label label-danger" *ngIf="item.status=='Cancelled'">{{item.status}}</span>
                     </td>
-                    <td class="text-center">
-                        <select class="input-sm form-control" (change)="OnChangeStatus(item.key,$event)" [disabled]="item.status=='Completed'">
+                    <td class="text-center" *ngIf="roleKey!=='Admin'">
+                        <select class="input-sm form-control" (change)="OnChangeStatus(item.$key,$event)" [disabled]="item.status=='Completed'">
                             <option>Select Status</option>
                             <option value="Booked">Booked</option>
                             <option value="Cancelled">Cancelled</option>
@@ -67,7 +71,7 @@
                              
                         </select>
                     </td>
-                    <td>{{item.payment}}</td>
+                    <td>{{item.modeOfPayment}}</td>
                     
                     <td class="text-center">
                         <span class="label label-success" *ngIf="item.pStatus=='SUCCESS'">Paid</span>
@@ -75,8 +79,8 @@
                         <span class="label label-danger" *ngIf="item.pStatus =='FAILURE'">Failed</span>
                     </td>
                     <td>Rs.{{item.serviceRate | number }}</td>
-                    <td class="text-center">
-                        <select class="input-sm form-control" (change)="OnChangePaymentStatus(item.key,$event)" [disabled]="item.pStatus=='SUCCESS'">
+                    <td class="text-center" *ngIf="roleKey!=='Admin'">
+                        <select class="input-sm form-control" (change)="OnChangePaymentStatus(item.$key,$event)" [disabled]="item.pStatus=='SUCCESS'">
                             <option>Select Status</option>
                             <option value="Pending">Pending</option>
                             <option value="SUCCESS">Paid</option>
@@ -85,11 +89,11 @@
                              
                         </select>
                     </td>
-                    <td class="text-center">
+                    <!-- <td class="text-center">
                         <button class="btn btn-sm btn-default" type="button" (click)="ordersShow(item.key)">
                             <em class="fa fa-search"></em>
                         </button>
-                    </td>
+                    </td> -->
                 </tr>
             </tbody>
         </table>

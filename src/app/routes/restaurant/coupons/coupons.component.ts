@@ -4,8 +4,7 @@ import {AngularFireDatabase, AngularFireList, AngularFireObject} from 'angularfi
 import {Observable} from 'rxjs/Observable';
 import {map} from 'rxjs/Operator/map';
 import { ToastrService } from 'ngx-toastr';
-const swal = require('sweetalert');
-
+declare var swal : any;
 @Component({
   selector: 'app-coupons',
   templateUrl: './coupons.component.html',

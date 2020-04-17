@@ -3,8 +3,7 @@ import {AngularFireDatabase, AngularFireList} from 'angularfire2/database';
 import {Observable} from 'rxjs/Observable';
 import {map} from 'rxjs/Operator/map';
 import {Router} from '@angular/router';
-const swal = require('sweetalert');
-
+declare var swal : any;
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',

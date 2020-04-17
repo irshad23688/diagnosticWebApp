@@ -3,124 +3,88 @@ import {Routes, RouterModule} from '@angular/router';
 //import {ColorPickerModule, ColorPickerService} from 'angular2-color-picker/lib';
 import {CustomFormsModule} from 'ng2-validation';
 import {SharedModule} from '../../shared/shared.module';
-
-import {CategoriesComponent} from './categories/categories.component';
-import {AddCategoriesComponent} from './categories/add-categories/add-categories.component';
-import {MenuItemsComponent} from './menu-items/menu-items.component';
-import {AddItemComponent} from './menu-items/add-item/add-item.component';
-import {OrdersComponent} from './orders/orders.component';
-import {ViewOrderComponent} from './orders/view-order/view-order.component';
-
  import {UsersComponent} from './users/users.component';
  import {AddUserComponent} from './users/add-user/add-user.component'; 
  import {ViewUserComponent} from './users/view-user/view-users.component';
-
 import {SettingsComponent} from './settings/settings.component';
-import {TagsComponent} from './tags/tags.component';
-import {EditTagesComponent} from './tags/edit-tages/edit-tages.component';
-import {AddTagsComponent} from './tags/add-tags/add-tags.component';
-import {BusinessInfoComponent} from './business-info/business-info.component';
 import {ProfileComponent} from './profile/profile.component';
-import {EditCategoryComponent} from './categories/edit-category/edit-category.component';
-import {ViewCategoryComponent} from './categories/view-category/view-category.component';
-import {ViewItemComponent} from './menu-items/view-item/view-item.component';
-import {EditItemComponent} from './menu-items/edit-item/edit-item.component';
-import {NewsComponent} from './news/news.component';
-import {AddNewsComponent} from './news/add-news/add-news.component';
-import {EditNewsComponent} from './news/edit-news/edit-news.component';
-import {ViewNewsComponent} from './news/view-news/view-news.component';
 import {CouponsComponent} from './coupons/coupons.component';
 import {AddCouponsComponent} from './coupons/add-coupons/add-coupons.component';
 import { PushNotificationComponent } from './push-notification/push-notification.component';
-import {LoyalitysComponent} from './loyalitys/loyalitys.component';
-
-import {Ng2CloudinaryModule} from 'ng2-cloudinary';
-import {FileUploadModule} from 'ng2-file-upload';
 import {AuthService} from '../pages/login/auth.service';
 import {LoginService} from '../pages/login/login.service';
-
 import {Ng2PaginationModule} from 'ng2-pagination';
- 
-import { ChatComponent } from './chat/chat.component';
-import { ChatBoxComponent } from './chat/chat-box/chat-box.component';
-import { StoreModule } from '@ngrx/store';
-import { chatData } from "./chat/action";
-import { TestimonialsComponent } from './testimonials/testimonials.component';
-import { AddTestimonialsComponent } from './testimonials/add-testimonials/add-testimonials.component';
-import { EditTestimonialsComponent } from './testimonials/edit-testimonials/edit-testimonials.component';
-import { ViewTestimonialsComponent } from './testimonials/view-testimonials/view-testimonials.component';
 import { SubscribersComponent } from './subscribers/subscribers.component';
-import { TableBookingComponent } from './table-booking/table-booking.component';
-import { ViewComponent } from './table-booking/view/view.component';
-import { DeliveryOptionsComponent } from './delivery-options/delivery-options.component';
-import { InvoiceComponent } from './orders/invoice/invoice.component';
-
-
 import {LabsComponent} from './labs/labs.component';
-import {AddLabComponent} from './labs/add-lab/add-lab.component'; 
-import {ViewLabComponent} from './labs/view-lab/view-labs.component';
-
 import {BookingsComponent} from './bookings/bookings.component';
-
+import { LabMasterComponent } from './lab-master/lab-master.component';
+import { AddServicesComponent } from './lab-master/add-services/add-services.component';
+import { AddLocationsComponent } from './lab-master/add-locations/add-locations.component';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
+import {MatCardModule} from '@angular/material/card';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatButtonModule} from '@angular/material/button';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatTableModule} from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { LabUsersComponent } from './lab-users/labusers.component';
+import { DailyReportsComponent } from './daily-reports/daily-reports.component';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
 
 @NgModule({
     imports: [
         SharedModule,
         CustomFormsModule,
         Ng2PaginationModule,
-        Ng2CloudinaryModule,
-        FileUploadModule,        
-        StoreModule.forRoot({data: chatData}) 
+        MatInputModule,
+        FormsModule,
+        ReactiveFormsModule,
+        MatCardModule,
+        MatSelectModule,
+        MatFormFieldModule,
+        MatExpansionModule,
+        MatButtonModule,
+        MatDialogModule,
+        MatTableModule,
+        MatPaginatorModule,
+        MatSortModule,
+        MatSlideToggleModule,
+        AngularFirestoreModule
     ],
 
-    declarations: [
-        CategoriesComponent,
-        AddCategoriesComponent,
-        MenuItemsComponent,
-        AddItemComponent,
-        OrdersComponent,       
+    declarations: [   
         SettingsComponent,
-        TagsComponent,
-        EditTagesComponent,
-        AddTagsComponent,
-        BusinessInfoComponent,
-        ViewOrderComponent,
         ProfileComponent,
-        EditCategoryComponent,
-        ViewCategoryComponent,
-        NewsComponent,
-        AddNewsComponent,
-        EditNewsComponent,
-        ViewNewsComponent,
-        ViewItemComponent,
-        EditItemComponent,
         AddCouponsComponent,
         CouponsComponent,
         PushNotificationComponent,
-        ChatComponent,
-        ChatBoxComponent,
         UsersComponent,
         ViewUserComponent,
         AddUserComponent,
-        TestimonialsComponent,
-        AddTestimonialsComponent,
-        EditTestimonialsComponent,
-        LoyalitysComponent,
-        ViewTestimonialsComponent,
         SubscribersComponent,
-        TableBookingComponent,
-        ViewComponent,
-        DeliveryOptionsComponent,
-        InvoiceComponent,
         LabsComponent,
-        AddLabComponent,
-        ViewLabComponent,
-        BookingsComponent
+        BookingsComponent,
+        LabMasterComponent,
+        AddServicesComponent,
+        AddLocationsComponent,
+        LabUsersComponent,
+        DailyReportsComponent
     ],
     providers: [
         AuthService,
-        LoginService
+        LoginService,
+        // AngularFirestore
+        
     ],
+    entryComponents: [AddServicesComponent,
+        AddLocationsComponent,
+        ],
+
 
     exports: [RouterModule,
         Ng2PaginationModule

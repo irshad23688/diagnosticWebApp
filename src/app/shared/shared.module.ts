@@ -17,9 +17,7 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
 import { TimepickerModule } from 'ngx-bootstrap/timepicker';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
-import { DatepickerModule } from 'ngx-bootstrap/datepicker'; 
 
-import { FlotDirective } from './directives/flot/flot.directive';
 import { SparklineDirective } from './directives/sparkline/sparkline.directive';
 import { EasypiechartDirective } from './directives/easypiechart/easypiechart.directive';
 import { ColorsService } from './colors/colors.service';
@@ -38,7 +36,6 @@ import { ScrollableDirective } from './directives/scrollable/scrollable.directiv
         ButtonsModule.forRoot(),
         CarouselModule.forRoot(),
         CollapseModule.forRoot(),
-        DatepickerModule.forRoot(),
         BsDropdownModule.forRoot(),
         ModalModule.forRoot(),
         PaginationModule.forRoot(),
@@ -53,7 +50,6 @@ import { ScrollableDirective } from './directives/scrollable/scrollable.directiv
         ColorsService
     ],
     declarations: [
-        FlotDirective,
         SparklineDirective,
         EasypiechartDirective,
         CheckallDirective,
@@ -70,7 +66,6 @@ import { ScrollableDirective } from './directives/scrollable/scrollable.directiv
         ButtonsModule,
         CarouselModule,
         CollapseModule,
-        DatepickerModule,
         BsDropdownModule,
         ModalModule,
         PaginationModule,
@@ -80,7 +75,6 @@ import { ScrollableDirective } from './directives/scrollable/scrollable.directiv
         TimepickerModule,
         TooltipModule,
         TypeaheadModule,
-        FlotDirective,
         SparklineDirective,
         EasypiechartDirective,
         CheckallDirective,

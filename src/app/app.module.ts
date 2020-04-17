@@ -18,6 +18,7 @@ import {AngularFireDatabaseModule} from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import {firebaseConfig} from './firebase.config';
 import {firebaseConfigTwo} from './firebase.config';
+import { AngularFirestore, AngularFirestoreModule } from 'angularfire2/firestore';
 
 // https://github.com/ocombe/ng2-translate/issues/218
 

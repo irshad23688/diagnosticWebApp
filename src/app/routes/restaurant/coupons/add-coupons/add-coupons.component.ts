@@ -1,5 +1,4 @@
 import {Component} from '@angular/core';
-import {CloudinaryOptions, CloudinaryUploader} from 'ng2-cloudinary';
 import {NgForm} from '@angular/forms';
 import {Router, ActivatedRoute} from "@angular/router";
 import {AngularFireDatabase, AngularFireList} from 'angularfire2/database';

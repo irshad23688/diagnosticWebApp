@@ -8,8 +8,8 @@ import { HomeModule } from './home/home.module';
 import { RestaurantModule } from './restaurant/restaurant.module';
 
 
-import { menu } from './menu';
 import { routes } from './routes';
+import { menu } from './menu';
 
 @NgModule({
     imports: [

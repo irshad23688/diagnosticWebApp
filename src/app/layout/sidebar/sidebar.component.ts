@@ -4,6 +4,7 @@ declare var $: any;
 
 import { MenuService } from '../../core/menu/menu.service';
 import { SettingsService } from '../../core/settings/settings.service';
+import { InterComponentService } from '../../routes/_service/inter-component.service';
 
 @Component({
     selector: 'app-sidebar',
@@ -15,10 +16,18 @@ export class SidebarComponent implements OnInit {
     menuItems: Array<any>;
     router: Router;
 
-    constructor(public menu: MenuService, public settings: SettingsService, public injector: Injector) {
-
-        this.menuItems = menu.getMenu();
-
+    constructor(public menu: MenuService, public settings: SettingsService, public injector: Injector,private interComp: InterComponentService) {
+        let responseService;
+        this.menuItems=[];
+        let menus=menu.getMenu();
+        this.interComp.getMessage().subscribe(res=>{
+            responseService=res;
+            for(var i = 0; i < menus.length; i++) {
+                if (menus[i].role === responseService || menus[i].role ==='Both') {
+                    this.menuItems.push(menus[i])                   
+                }
+            }
+        });
     }
 
     ngOnInit() {
